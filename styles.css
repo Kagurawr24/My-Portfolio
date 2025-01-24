@@ -1,0 +1,758 @@
+/* Reset all default margins and set box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0; /* Removes default spacing between elements */
+    padding: 0;
+}
+
+/* Navigation */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes logo to the left and nav to the right */
+    background-color: #485a5c00;
+    padding: 10px;
+    height: 55px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo styling */
+.logo-container {
+    margin-left: 15px; /* Adds space between the logo and the left edge */
+    margin-top: 20px; /* Adds space between the logo and the top edge */
+}
+
+.nav-logo {
+    width: 70px;
+    height: auto;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: #79abec; /* Dark blue color */
+    text-decoration: none;
+    font-size: 22px; /* Increase font size as needed */
+}
+
+nav ul li a:hover {
+    text-shadow: 
+        0 0 5px rgba(124, 163, 193, 0.762), /* Light glow */
+        0 0 10px rgba(70, 130, 180, 0.6); /* Stronger glow */
+}
+
+/* Apply unified section styling */
+section {
+    background-color: #294f70; /* Replace with your desired background color */
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Add padding within sections as needed */
+}
+
+/* Remove any unintended margin for direct child elements */
+section > * {
+    margin: 0; /* Ensures no spacing between child elements */
+}
+
+/* Home */
+.home {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 7em;
+    padding: 30px 12% 0;
+    z-index: 1;
+}
+
+.home-content {
+    max-width: 800px;
+}
+
+.home-content h1 {
+    font-size: 25px;
+    color: 	#99b9e9;
+}
+
+.home-content h2 {
+    font-size: 42px;
+    color: 	#99b9e9;
+}
+
+.home-content h2 span{
+    color:#df877f
+}
+
+.home-content p {
+    font-size: 18px;
+    color: #8a7fef;
+}
+
+.get-started-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #9a95dc30; /* Change to your desired color */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.get-started-button:hover {
+    background-color: #9a95dc60; /* Change to a darker shade for hover effect */
+    box-shadow: 0 0 10px rgba(112, 169, 210, 0.5), /* Soft glow */
+                0 0 20px rgba(112, 169, 210, 0.2); /* Extended glow */
+}
+
+.img-box1 img {
+    border-radius: 50%;
+    width: 350px;
+}
+
+/* About */
+.about {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 7em;
+    padding: 30px 12% 0;
+}
+
+.about-content {
+    max-width: 800px;
+    z-index: 1;
+}
+
+.about-content h1 {
+    font-size: 30px;
+    color: 	#df877f;
+}
+
+.about-content p {
+    font-size: 20px;
+    color: #99b9e9;
+}
+
+.about-content p span{
+    color:#8a7fef
+}
+
+.img-box2 {
+    display: flex; /* Flexbox to arrange images */
+    flex-direction: column; /* Stack images vertically */
+    gap: 20px; /* Space between images */
+    justify-content: center; /* Center the images horizontally */
+    align-items: center; /* Align images horizontally */
+}
+
+.img-box2 img {
+    width: 100%; /* Use 100% to fit within the container */
+    height: auto;
+    max-width: 1500px; /* Increased max width for a larger display */
+    border-radius: 8px; /* Optional: add rounded corners */
+}
+
+.video-container {
+    margin-top: 20px; /* Space above the video */
+    display: flex; /* Allows centering within the container */
+    justify-content: center; /* Center the video horizontally */
+    width: 100%; /* Ensure full width for proper alignment */
+}
+
+video {
+    border-radius: 8px; /* Optional: add rounded corners to the video */
+    width: 100%; /* Make video responsive */
+    max-width: 1500px; /* Increased max width to match the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Portfolio */
+.portfolio {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 12% 0;
+}
+
+/* Position h1 at the top left */
+.portfolio h1 {
+    color: #df877f;
+    font-size: 2.5rem;
+    margin-bottom: 2rem; /* Adds spacing below the heading */
+}
+
+/* Center the card container */
+.card-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers the card container */
+}
+
+/* Flex container for cards */
+.card-container {
+    display: flex;
+    gap: 5rem; /* Space between the cards */
+}
+
+/* Card styling */
+.category-card {
+    width: 350px; /* Increase the width to make the card larger */
+    text-align: center;
+    text-decoration: none;
+    color: #382d9a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(10, 35, 75, 0.8); /* Increase shadow for emphasis */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card img {
+    width: 100%; /* Ensures the image scales with the card */
+    height: auto;
+    border-bottom: 3px solid #99b9e9; /* Increase the border size for balance */
+}
+
+.category-card .card-content {
+    padding: 10px; /* Increase padding for more spacing inside the card */
+    background-color: #dfecff;
+}
+
+.category-card h3 {
+    margin: 15px 0 10px; /* Adjust margins for spacing */
+    font-size: 1.8rem; /* Increase font size */
+}
+
+.category-card p {
+    font-size: 1.2rem; /* Slightly larger description text */
+    color: #99b9e9;
+}
+
+.category-card:hover {
+    transform: scale(1.08); /* Slightly larger scale on hover for impact */
+    box-shadow: 0 0 8px rgba(124, 163, 193, 0.8), /* More pronounced glow */
+                0 0 15px rgba(70, 130, 180, 0.8);
+}
+
+/* Optional: Back link styling */
+.back-link {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Contact */
+.contact {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between; /* Places the content and image at opposite ends */
+    padding: 30px 12% 0;
+}
+
+/* Contact Content Styling */
+.contact-content {
+    max-width: 800px;
+    flex-direction: column; /* Stack content vertically */
+    align-items: flex-start; /* Align content to the left */
+    z-index: 1;
+}
+
+.contact-content h1 {
+    font-size: 30px;
+    color: #df877f;
+}
+
+.contact-content p {
+    font-size: 20px;
+    color: #99b9e9;
+}
+
+/* Contact Info Styling */
+.contact-content {
+    width: 100%; /* Ensures the container takes full width */
+    max-width: 800px; /* Optional: restricts the width of the contact info */
+    display: flex;
+    justify-content: flex-start; /* Align icons to the left */
+    gap: 20px; /* Adds space between the icons */
+    flex-wrap: wrap; /* Ensures that icons wrap into the next line if necessary */
+    margin-top: 20px; /* Space between the paragraph and contact icons */
+}
+
+.contact-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Removes the default margin */
+    display: flex;
+}
+
+.contact-content li {
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adds space between list items */
+}
+
+.contact-content i {
+    margin-right: 10px;
+    color: #251c71;
+    font-size: 2em;
+}
+.contact-content li:hover {
+    text-shadow: 
+        0 0 5px rgba(124, 163, 193, 0.762), /* Light glow */
+        0 0 10px rgba(70, 130, 180, 0.6); /* Stronger glow */
+}
+
+/* Quote Section */
+.quote-section {
+    display: flex; /* Flexbox to arrange images */
+    justify-content: center; /* Center the images horizontally */
+    align-items: center; /* Align images horizontally */
+    width: 40%; /* Restrict the image section to 40% of the container width */
+}
+
+.quote-section img {
+    width: 100%; /* Makes the image responsive */
+    max-width: 600px; /* Set the max width to control the size */
+    height: auto;
+    border-radius: 8px; /* Optional: add rounded corners */
+}
+
+/* Styles for the Immersive Technology page only */
+/* Ensure the body adjusts for the fixed header */
+body.immtech-page {
+    margin: 0; /* Reset default browser margin */
+    padding: 0; /* Reset default browser padding */
+}
+
+/* Header without fixed positioning */
+.immtech-page header {
+    background-color: #294f70;
+    color: #99b9e9;
+    position: relative; /* Default positioning so it scrolls with the page */
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: none; /* Optional: Remove shadow */
+}
+
+
+.immtech-page header h1 {
+    font-size: 35px; /* Set the size of the title text */
+    font-weight: bold; /* Optional: Make it bold */
+    text-align: left; /* Align text to the left */
+    padding-left: 20px; /* Add padding from the left */
+    color: #99b9e9; /* Optional: Adjust the color */
+}
+
+
+/* Add space for the fixed header */
+.immtech-page section:first-of-type {
+    padding-top: 50px; /* Matches the header height plus additional spacing */
+}
+
+/* Section styles */
+.immtech-page section {
+    background-color: #294f70;
+    padding: 20px;
+}
+
+/* Heading reset */
+.immtech-page section h2 {
+    margin-top: 0; /* Remove top margin */
+    padding-top: 10px; /* Add custom padding if needed */
+}
+
+/* Flexbox for cards */
+.immtech-page .card-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Individual project card styles for all except .small-project */
+.immtech-page .room1, 
+.immtech-page .room2, 
+.immtech-page .room3-end {
+    width: 100%;
+    max-width: 800px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(10, 35, 75, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+/* Specific styles for .small-project */
+.immtech-page .small-project {
+    width: 80%; /* Adjusted size */
+    max-width: 600px; /* Smaller max-width */
+    margin: 10px auto; /* Center align with auto margins */
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(10, 35, 75, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+/* Hover effect for all project cards */
+.immtech-page .small-project:hover, 
+.immtech-page .room1:hover, 
+.immtech-page .room2:hover, 
+.immtech-page .room3-end:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 0 5px rgba(124, 163, 193, 0.8), /* Light glow */
+                0 0 10px rgba(70, 130, 180, 0.8); /* Stronger glow */;
+}
+
+/* Bold h3 headings */
+.immtech-page h3 {
+    font-weight: bold;
+}
+
+/* Back link styles */
+.immtech-page .back-link {
+    color: #99b9e9;
+    text-decoration: none;
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+}
+
+.immtech-page .back-link:hover {
+    color: #df877f;
+}
+
+/* Styling for the coding-page body */
+.coding-page h1{
+    font-size: 35px; /* Set the size of the title text */
+    font-weight: bold; /* Optional: Make it bold */
+    text-align: left; /* Align text to the left */
+    padding-left: 20px; /* Add padding from the left */
+    color: #99b9e9; /* Optional: Adjust the color */
+}
+
+body.coding-page {
+    margin: 0;
+    padding: 0;
+    background-color: #294f70; /* Match the blue background */
+    color: #000000; 
+}
+
+/* Container for images in the project */
+.coding-page .img-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between images */
+    justify-content: center; /* Center the grid within the container */
+    align-items: center;
+    padding: 20px; /* Add some spacing around the grid */
+}
+
+/* Image styles */
+.coding-page .img-container img,
+.coding-page .img-container video {
+    width: 450px; /* Set a fixed width for both video and image */
+    height: 250px; /* Set a fixed height */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    object-fit: cover; /* Ensure content fits dimensions */
+}
+
+/* Optional: Hover effect */
+.coding-page .img-container img:hover,
+.coding-page .img-container video:hover {
+    transform: scale(1.05); /* Enlarge slightly on hover */
+    box-shadow: 0 0 10px rgba(124, 163, 193, 0.8), /* Light glow */
+                0 0 15px rgba(70, 130, 180, 0.8); /* Stronger glow */;
+}
+
+/* Optional: Set the container size explicitly */
+.coding-page .img-container {
+    display: inline-block; /* Ensures inline-block layout for video and image */
+    text-align: center;
+}
+
+/* Back link styles for the coding-page */
+.coding-page .back-link {
+    color: #99b9e9;
+    text-decoration: none;
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+    font-size: 1.2rem; /* Slightly larger font size for readability */
+    padding: 10px; /* Add padding for better clickability */
+    background-color: transparent; /* Ensure no background */
+    transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover effect for back-link */
+.coding-page .back-link:hover {
+    color: #df877f;
+}
+
+/* Styling for the design-page body */
+body.design-page {
+    margin: 0;
+    padding: 0;
+    background-color: #294f70; /* Match the blue background from coding-page */
+    color: #000000;
+}
+
+/* Title styling for the design page */
+.design-page h1 {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+    color: #99b9e9; /* Match the title color from coding-page */
+}
+
+/* Styling for each project card container */
+.design-page .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center; /* Center each card */
+}
+
+/* Image container for project cards */
+.design-page .img-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Image styles */
+.design-page .img-container img {
+    width: 450px; /* Match the size from coding-page */
+    height: 250px;
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    object-fit: cover; /* Ensure content fits dimensions */
+}
+
+/* Hover effect for images */
+.design-page .img-container img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 0 10px rgba(124, 163, 193, 0.8), /* Light glow */
+                0 0 15px rgba(70, 130, 180, 0.8); /* Stronger glow */
+}
+
+/* Styling for the design-page body */
+body.design-page {
+    margin: 0;
+    padding: 0;
+    background-color: #294f70; /* Match the blue background from coding-page */
+    color: #000000;
+}
+
+/* Title styling for the design page */
+.design-page h1 {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+    color: #99b9e9; /* Match the title color from coding-page */
+}
+
+/* Styling for each project card container */
+.design-page .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Smaller cards with responsiveness */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center; /* Center each card */
+}
+
+/* Image container for project cards */
+.design-page .img-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Image styles with smaller 4:3 aspect ratio */
+.design-page .img-container img {
+    width: 320px; /* Smaller width */
+    height: 240px; /* Smaller height to maintain 4:3 aspect ratio */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    object-fit: cover; /* Ensure content fits dimensions */
+}
+
+/* Hover effect for images */
+.design-page .img-container img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 0 10px rgba(124, 163, 193, 0.8), /* Light glow */
+                0 0 15px rgba(70, 130, 180, 0.8); /* Stronger glow */
+}
+
+/* Project description styles */
+.design-page .project h2 {
+    font-size: 1.5rem;
+    color: #99b9e9; /* Match the header and title color */
+    margin-bottom: 10px;
+}
+
+.design-page .project p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #000000; /* Match the body text color */
+}
+
+/* Back link styles for the design page */
+.design-page .back-link {
+    color: #99b9e9; /* Match the link color from coding-page */
+    text-decoration: none;
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+    font-size: 1.2rem; /* Slightly larger font size for readability */
+    padding: 10px; /* Add padding for better clickability */
+    background-color: transparent; /* Ensure no background */
+    transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover effect for back-link */
+.design-page .back-link:hover {
+    color: #df877f; /* Match the hover color from coding-page */
+}
+
+/* Particle effect */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Keeps particles unclickable */
+    overflow: hidden; /* Hide overflowed particles */
+    z-index: 0; /* Ensure it stays in the background */
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 1); /* Change color if needed */
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: float 4s infinite ease-in-out; /* Reduced duration for higher frequency */
+    z-index: 0; /* Ensures particles stay behind content */
+
+    /* Glow effect for each particle */
+    box-shadow: 0 0 10px rgba(50, 100, 200, 1), /* Soft outer glow */
+                0 0 50px rgba(230, 100, 200, 1); /* Subtle extended glow */
+}
+
+/* Floating animation for particles */
+@keyframes float {
+    from {
+        transform: translateY(0) translateX(0); /* Start from the top */
+        opacity: 0.6;
+    }
+    to {
+        transform: translateY(100vh) translateX(10vw); /* Move downwards */
+        opacity: 0.2;
+    }
+}
+
+/* Additional particles with varying sizes, speeds, and delays */
+.particle:nth-child(1) {
+    width: 5px;
+    height: 5px;
+    left: 20%;
+    animation-duration: 3s; /* Shorter duration for higher frequency */
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    width: 8px;
+    height: 8px;
+    left: 40%;
+    animation-duration: 2.5s; /* Shorter duration for higher frequency */
+    animation-delay: 0.5s; /* Slight delay for staggered effect */
+}
+
+.particle:nth-child(3) {
+    width: 12px;
+    height: 12px;
+    left: 60%;
+    animation-duration: 3.5s; /* Shorter duration for higher frequency */
+    animation-delay: 1s; /* Slight delay for staggered effect */
+}
+
+.particle:nth-child(4) {
+    width: 6px;
+    height: 6px;
+    left: 80%;
+    animation-duration: 2.8s; /* Shorter duration for higher frequency */
+    animation-delay: 0.2s; /* Slight delay for staggered effect */
+}
+
+.particle:nth-child(5) {
+    width: 7px;
+    height: 7px;
+    left: 90%;
+    animation-duration: 3.2s; /* Shorter duration for higher frequency */
+    animation-delay: 1.5s; /* Slight delay for staggered effect */
+}
+
+.particle:nth-child(6) {
+    width: 10px; /* Different size */
+    height: 10px;
+    left: 15%;
+    animation-duration: 2.7s; /* Faster */
+    animation-delay: 0.3s; /* Staggered */
+}
+
+.particle:nth-child(7) {
+    width: 9px; /* Different size */
+    height: 9px;
+    left: 25%;
+    animation-duration: 3.1s; /* Moderate speed */
+    animation-delay: 0.8s; /* Staggered */
+}
+
+.particle:nth-child(8) {
+    width: 11px; /* Different size */
+    height: 11px;
+    left: 35%;
+    animation-duration: 2.9s; /* Faster */
+    animation-delay: 1.2s; /* Staggered */
+}
+
+.particle:nth-child(9) {
+    width: 4px; /* Smaller size */
+    height: 4px;
+    left: 50%;
+    animation-duration: 4s; /* Slower */
+    animation-delay: 1.8s; /* Staggered */
+}
