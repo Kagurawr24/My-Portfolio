@@ -7,11 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="immtech-page">
+    <!-- Particle background container -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
     <header>
         <h1>Immersive Technology Works</h1>
     </header>
+    
     <section id="small-project" class="portfolio">
         <h2>Augmented Reality Namecard Project</h2>
+        <br>
         <div class="card-container">
             <div class="small-project">
                 <video src="imgnvid/portfolio/mini AR project.mp4" alt="small project" autoplay muted loop controls></video>
@@ -26,33 +40,40 @@
     </section>
     
     <section id="immtech-portfolio" class="portfolio">
-        <h2>Virtual Reality Escape Room Project</h2>
-        <div class="card-container">
-            <div class="room1">
-                <video src="imgnvid/portfolio/Room1.mp4" alt="immtech Room1" autoplay muted loop controls></video>
+    <h2>Virtual Reality Escape Room Project</h2>
+    <br>
+    <div class="card-container">
+
+        <!-- Video container only -->
+        <div class="immtech-page vr-videos">
+            <video src="imgnvid/portfolio/Room1.mp4" alt="Room1" autoplay muted loop controls></video>
+            <video src="imgnvid/portfolio/Room2.mp4" alt="Room2" autoplay muted loop controls></video>
+            <video src="imgnvid/portfolio/Room3&end.mp4" alt="Room3&end" autoplay muted loop controls></video>
+        </div>
+
+        <!-- Text container only -->
+        <div class="immtech-page vr-texts">
+            <div class="vr-text">
                 <h3><b>Room 1 walkthrough</b></h3>
                 <p>In the first part of the immersive VR game, the clues are revealed in the first half of the video. 
-                    The order of the books is determined by the number of candles placed beside each one. 
-                    The player then interacts with the books by clicking on them in the correct sequence, 
-                    unlocking the door to progress to the next area.</p>
+                The order of the books is determined by the number of candles placed beside each one. 
+                The player then interacts with the books by clicking on them in the correct sequence, 
+                unlocking the door to progress to the next area.</p>
             </div>
-            <div class="room2">
-                <video src="imgnvid/portfolio/Room2.mp4" alt="immtech Room2" autoplay muted loop controls></video>
+            <div class="vr-text">
                 <h3><b>Room 2 walkthrough</b></h3>
                 <p>In the second part of the game, the puzzle is solved by pulling the sword out of the stone and using 
-                    it to strike the monster. This action triggers the tombstone gate to open, allowing the player to proceed</p>
+                it to strike the monster. This action triggers the tombstone gate to open, allowing the player to proceed.</p>
             </div>
-            <div class="room3-end">
-                <video src="imgnvid/portfolio/Room3&end.mp4" alt="immtech Room3&end" autoplay muted loop controls></video>
+            <div class="vr-text">
                 <h3><b>Room 3 to ending walkthrough</b></h3>
                 <p>In the final part of the game, the main gate is unlocked by finding skull candles of different sizes and 
-                    placing them correctly on the skull. These candles are scattered throughout the area, 
-                    with the last candle requiring the player to solve an additional puzzle—unlocking a grave using a shovel. 
-                    As shown, the player places the candles in the correct positions, which triggers the gate to unlock. 
-                    Regarding the coding, I used pivot points to attach the skull candles to the skull.</p>
-            </div>            
+                placing them correctly on the skull. These candles are scattered throughout the area, 
+                with the last candle requiring the player to solve an additional puzzle—unlocking a grave using a shovel. 
+                Regarding the coding, I used pivot points to attach the skull candles to the skull.</p>
+            </div>
         </div>
+    </div>
         <a href="index.html" class="back-link">Back to Portfolio</a>
     </section>
 </body>
-</html>

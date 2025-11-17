@@ -347,6 +347,7 @@ video {
 body.immtech-page {
     margin: 0; /* Reset default browser margin */
     padding: 0; /* Reset default browser padding */
+    color: #D8E8FF; /* Set text color for better readability */
 }
 
 /* Header without fixed positioning */
@@ -395,17 +396,29 @@ body.immtech-page {
     align-items: center;
 }
 
-/* Individual project card styles for all except .small-project */
-.immtech-page .room1, 
-.immtech-page .room2, 
-.immtech-page .room3-end {
-    width: 100%;
-    max-width: 800px;
-    margin: 10px;
-    text-align: center;
+/* Container for all VR content */
+.immtech-page .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Videos row */
+.immtech-page .vr-videos video {
+    width: 300px;      /* All videos same width */
+    height: 200px;     /* All videos same height */
+    object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(10, 35, 75, 0.8);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+.immtech-page .vr-text h3 {
+    font-weight: bold;
+}
+
+.immtech-page .vr-text p {
+    color: #D8E8FF;
+    text-align: left;
 }
 
 /* Specific styles for .small-project */
@@ -421,9 +434,7 @@ body.immtech-page {
 
 /* Hover effect for all project cards */
 .immtech-page .small-project:hover, 
-.immtech-page .room1:hover, 
-.immtech-page .room2:hover, 
-.immtech-page .room3-end:hover {
+.immtech-page .vr-videos:hover {
     transform: scale(1.05); /* Slightly enlarge on hover */
     box-shadow: 0 0 5px rgba(124, 163, 193, 0.8), /* Light glow */
                 0 0 10px rgba(70, 130, 180, 0.8); /* Stronger glow */;
@@ -460,7 +471,7 @@ body.coding-page {
     margin: 0;
     padding: 0;
     background-color: #294f70; /* Match the blue background */
-    color: #000000; 
+    color: #D8E8FF; 
 }
 
 /* Container for images in the project */
@@ -521,7 +532,7 @@ body.design-page {
     margin: 0;
     padding: 0;
     background-color: #294f70; /* Match the blue background from coding-page */
-    color: #000000;
+    color: #D8E8FF;
 }
 
 /* Title styling for the design page */
@@ -570,7 +581,7 @@ body.design-page {
     margin: 0;
     padding: 0;
     background-color: #294f70; /* Match the blue background from coding-page */
-    color: #000000;
+    color: #D8E8FF;
 }
 
 /* Title styling for the design page */
@@ -624,7 +635,7 @@ body.design-page {
 .design-page .project p {
     font-size: 1rem;
     line-height: 1.5;
-    color: #000000; /* Match the body text color */
+    color: #D8E8FF; /* Match the body text color */
 }
 
 /* Back link styles for the design page */
@@ -644,6 +655,222 @@ body.design-page {
 .design-page .back-link:hover {
     color: #df877f; /* Match the hover color from coding-page */
 }
+
+/* ======= GLOBAL QUALITY-OF-LIFE ======= */
+html { scroll-behavior: smooth; }
+
+/* Your header is fixed (55px). Push content down so it's not hidden. */
+body { padding-top: 55px; }
+
+/* Anchor jumps won’t hide under the header on supported browsers */
+section { scroll-margin-top: 70px; }
+
+/* Let nav wrap if it needs to on narrow screens */
+nav ul { flex-wrap: wrap; }
+
+/* === FIX WHITE STRIP ABOVE HEADER === */
+html, body {
+  background: #294f70; /* Match your section background so nothing "white" shows */
+}
+
+/* Make header slightly solid to avoid transparency gaps */
+header {
+  background: rgba(41, 79, 112, 0.96); /* Same as #294f70 with a touch of transparency */
+  backdrop-filter: blur(6px);          /* Optional: soft blur */
+}
+
+/* ======================================
+   TABLETS (<= 1024px)
+   ====================================== */
+@media (max-width: 1024px) {
+  /* Tighten header/nav spacing & font sizes a bit */
+  header { height: 52px; padding: 8px 10px; }
+  body   { padding-top: 52px; }
+  nav ul { gap: 12px; }
+  nav ul li a { font-size: 18px; }
+
+  /* Sections: don’t force full viewport height; avoid huge gaps */
+  section { min-height: auto; padding: 24px 6%; }
+
+  /* HOME */
+  .home {
+    gap: 3em;
+    padding: 24px 6% 0;
+  }
+  .home-content h1 { font-size: 22px; }
+  .home-content h2 { font-size: 34px; }
+  .home-content p  { font-size: 16px; }
+
+  .img-box1 img {
+    width: 280px; /* scale portrait down a touch */
+  }
+
+  /* ABOUT */
+  .about {
+    gap: 3em;
+    padding: 24px 6% 0;
+  }
+  .about-content h1 { font-size: 26px; }
+  .about-content p  { font-size: 18px; }
+
+  .img-box2 img,
+  video { max-width: 1000px; }
+
+  /* PORTFOLIO — switch to wrapping grid */
+  .portfolio { padding: 24px 6% 0; }
+  .card-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .category-card { width: 320px; }
+
+  /* CONTACT — keep text left, image right but a bit tighter */
+  .contact { padding: 24px 6% 0; gap: 2rem; }
+  .contact-content p { font-size: 18px; }
+  .quote-section { width: 44%; }
+}
+
+/* ======================================
+   PHONES (<= 600px)
+   ====================================== */
+@media (max-width: 600px) {
+  /* Header/nav: compact & thumb-friendly */
+  header { height: 48px; padding: 6px 8px; padding-top: env(safe-area-inset-top); } /* notch-safe */
+  body   { padding-top: 48px; }
+  nav ul { gap: 10px; justify-content: center; }
+  nav ul li a { font-size: 16px; }
+
+  /* Sections: stack and breathe, no full-screen forcing */
+  section {
+    min-height: auto;
+    padding: 20px 5%;
+  }
+
+  /* HOME — stack image under text, center buttons */
+  .home {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 20px 5% 0;
+    text-align: left;        /* keep copy aligned */
+  }
+  .home-content { max-width: 680px; width: 100%; }
+  .home-content h1 { font-size: 20px; }
+  .home-content h2 { font-size: 28px; }
+  .home-content p  { font-size: 16px; }
+
+  .get-started-button {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+
+  .img-box1 img {
+    width: min(68vw, 300px);      /* keeps portrait nicely sized */
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
+  /* ABOUT — stack media below text */
+  .about {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 20px 5% 0;
+  }
+  .about-content { max-width: 680px; width: 100%; }
+  .about-content h1 { font-size: 24px; }
+  .about-content p  { font-size: 16px; }
+
+  .img-box2 { width: 100%; }
+  .img-box2 img {
+    width: 100%;
+    max-width: 640px;
+  }
+  .video-container { width: 100%; }
+  video {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+  }
+
+  /* PORTFOLIO — single-column cards on phones */
+  .portfolio { align-items: center; }
+  .portfolio h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+  }
+  .card-container {
+    width: 100%;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .category-card {
+    width: min(92vw, 360px);
+  }
+  .category-card h3 { font-size: 1.25rem; }
+  .category-card p  { font-size: 1rem; }
+
+  /* CONTACT — stack text then image, keep left aligned info */
+  .contact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 20px 5% 0;
+  }
+  .contact-content { max-width: 680px; width: 100%; }
+  .contact-content h1 { font-size: 24px; }
+  .contact-content p  { font-size: 16px; }
+
+  .contact-content ul {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .contact-content li {
+    margin-right: 14px;
+    font-size: 16px;
+  }
+  .contact-content i { font-size: 1.4em; }
+
+  .quote-section {
+    width: 100%;
+    order: 2;
+  }
+  .quote-section img {
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  /* Immersive Tech / Coding / Design pages: single-column grids */
+  .immtech-page .card-container,
+  .coding-page .img-container,
+  .design-page .card-container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    justify-items: center !important;
+  }
+
+  .coding-page .img-container img,
+  .coding-page .img-container video {
+    width: 100%;
+    max-width: 520px;
+    height: auto;       /* let height follow width */
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .design-page .img-container img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+}
+
 
 /* Particle effect */
 .particles {
